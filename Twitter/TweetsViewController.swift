@@ -13,6 +13,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var tweets: [Tweet]?
+    var tweetsDataSource = TweetsDataSource()
+    var delegate: TweetDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         User.currentUser?.logout()
     }
 
+    @IBAction func newTweetBtnPressed(sender: UIBarButtonItem) {
+        delegate?.newTweetButtonPressed()
+    }
+    
+    @IBAction func likeBtnPressed(sender: AnyObject) {
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TweetDetailView" {

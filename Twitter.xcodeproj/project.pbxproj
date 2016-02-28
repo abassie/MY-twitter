@@ -123,9 +123,9 @@
 		A4A7E5511C837A8D006543BD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A49AB3E51C725BAD00390C0E /* ViewController.swift */,
 				A49CF8881C75597E0062029D /* TweetsViewController.swift */,
 				A469BE461C7BF6A70095D157 /* TweetDetailViewController.swift */,
-				A49AB3E51C725BAD00390C0E /* ViewController.swift */,
 				A4A7E55B1C838194006543BD /* NewTweetViewController.swift */,
 				A4A7E55D1C838322006543BD /* UserDetailViewController.swift */,
 			);

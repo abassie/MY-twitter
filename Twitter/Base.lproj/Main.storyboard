@@ -104,6 +104,7 @@
                                                     <state key="normal" backgroundImage="like_off"/>
                                                     <connections>
                                                         <action selector="likeBtnPressed:" destination="2Ly-kA-l7x" eventType="touchUpInside" id="4CU-mS-ZQI"/>
+                                                        <action selector="likeBtnPressed:" destination="pXP-bc-kum" eventType="touchUpInside" id="rPd-n2-Ryf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -141,6 +142,11 @@
                                     <action selector="onLogout:" destination="pXP-bc-kum" eventType="touchUpInside" id="zCE-yS-9ji"/>
                                 </connections>
                             </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="YXi-mZ-aHs">
+                            <connections>
+                                <action selector="newTweetBtnPressed:" destination="pXP-bc-kum" id="Ij7-9Z-AF2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
