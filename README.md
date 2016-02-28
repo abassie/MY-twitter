@@ -109,7 +109,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I am in over my head with this app. I keep having to revert back to old versions of my app because the errors are piling up so quickly. We were given instructional videos for the first four weeks and then had to create an app with more functionality than any of the previous apps. I am a hard worker, and I know how to be resourceful, but when our own school's leaders are struggling with the app, it is quite difficult to find support. I would really love to learn how to program in iOS, but as a beginner, I need more basic assignments to  teach me the fundamentals of the language.
+I am in over my head with this app. I keep having to revert back to old versions of my app because the errors are piling up so quickly. We were given instructional videos for the first four weeks and then had to create an app with more functionality than any of the previous apps. I am a hard worker, and I know how to be resourceful, but when our own school's leaders are struggling with the app, it is quite difficult to find support. Chase McCoy has pretty much been our only source for help, and I do not want to have to rely so heavily on his code because I do not understand it myself.
+
+I would really love to learn how to program in iOS, but as a beginner, I need more basic assignments to  teach me the fundamentals of the language.
 
 ## License
 
