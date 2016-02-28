@@ -61,6 +61,10 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-2n-gml">
                                                     <rect key="frame" x="8" y="8" width="79" height="74"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="kgJ-ZV-zKb" appends="YES" id="tyr-7Z-QUP"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd8-64-ufd">
                                                     <rect key="frame" x="95" y="8" width="208" height="21"/>
@@ -79,6 +83,7 @@
                                                     <state key="normal" backgroundImage="rt_off"/>
                                                     <connections>
                                                         <action selector="rtBtnPressed:" destination="2Ly-kA-l7x" eventType="touchUpInside" id="K2d-xq-3lT"/>
+                                                        <action selector="rtBtnPressed:" destination="pXP-bc-kum" eventType="touchUpInside" id="OEs-Fk-crJ"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-Lf-nkr">
@@ -154,6 +159,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVW-Cl-6KP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kgJ-ZV-zKb"/>
             </objects>
             <point key="canvasLocation" x="1474" y="320"/>
         </scene>

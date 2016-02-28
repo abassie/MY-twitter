@@ -4,7 +4,7 @@
 //
 //  Created by Abby  Bassie on 2/15/16.
 //  Copyright © 2016 codepath. All rights reserved.
-//
+//  Assistance in this file from MSU codepath student Chase McCoy
 
 import UIKit
 import BDBOAuth1Manager
@@ -116,6 +116,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    //Functions from Chase McCoy
     func retweetTweetWithID(id: String, completion: (tweet: Tweet?, error: NSError?) -> ()) {
         POST("1.1/statuses/retweet/\(id).json",
             parameters: nil,
@@ -139,6 +140,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
         
     }
+    
     
     func tweetWasLiked(tweetID: String, completion: (tweet: Tweet) -> ()) {
         TwitterClient.sharedInstance.favoriteTweetWithID(tweetID) { (tweet, error) -> () in

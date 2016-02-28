@@ -4,7 +4,7 @@
 //
 //  Created by Abby  Bassie on 2/17/16.
 //  Copyright © 2016 codepath. All rights reserved.
-//
+// Structure for this code from Chase McCoy
 
 import UIKit
 
@@ -12,6 +12,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+    // MAY BE INTERFERING 
     var tweets: [Tweet]?
     var tweetsDataSource = TweetsDataSource()
     var delegate: TweetDelegate?
@@ -23,12 +24,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.dataSource = self
        
-        // Do any additional setup after loading the view.
+        
         //must use Singleton here to access keys stored in TwitterClient
+        //COULD USE TO CREATE TWEETS LIST 
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
             self.tableView.reloadData()
-            //tweet.favorite here will do a post instead of get
+        
             
         })
     }
@@ -50,13 +52,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    func getIndex(sender: AnyObject) -> NSIndexPath? {
-        let buttonPosition = sender.convertPoint(CGPointZero, toView: tableView)
-        return tableView.indexPathForRowAtPoint(buttonPosition)
-    }
-    
 
-    
  
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
@@ -66,7 +62,22 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func getIndexPathForTappedObject(sender: AnyObject) -> NSIndexPath? {
+        let buttonPosition = sender.convertPoint(CGPointZero, toView: tableView)
+        return tableView.indexPathForRowAtPoint(buttonPosition)
+    }
     
+    func getTweetForTappedObject(sender: AnyObject) -> Tweet? {
+        return tweetsDataSource.tweetForIndex(getIndexPathForTappedObject(sender)!)
+    }
+    
+    //not opening user profile page
+    func tappedUserImageView(sender: UITapGestureRecognizer) {
+        let tappedPoint = sender.locationInView(tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(tappedPoint)
+        let user = tweetsDataSource.tweets![(indexPath?.row)!].user
+        delegate?.userImageViewPressed(user)
+    }
     
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
@@ -76,9 +87,30 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         delegate?.newTweetButtonPressed()
     }
     
+    //An error occurs when these buttons are pressed
     @IBAction func likeBtnPressed(sender: AnyObject) {
+        let tweet = getTweetForTappedObject(sender)!
+        delegate?.tweetWasLiked(tweet.id, completion: { (tweet) -> () in
+            self.tweetsDataSource.tweets![self.getIndexPathForTappedObject(sender)!.row].liked = true
+            self.tableView.reloadData()
+        })
     }
     
+    //An error occurs when these buttons are pressed
+    @IBAction func rtBtnPressed(sender: AnyObject) {
+        let tweet = getTweetForTappedObject(sender)!
+        delegate?.tweetWasRetweeted(tweet.id, completion: { (tweet) -> () in
+            self.tweetsDataSource.tweets![self.getIndexPathForTappedObject(sender)!.row].retweeted = true
+            self.tableView.reloadData()
+        })
+    }
+    
+    func tappedThumbImageView(sender: UITapGestureRecognizer) {
+        let tappedPoint = sender.locationInView(tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(tappedPoint)
+        let user = tweetsDataSource.tweets![(indexPath?.row)!].user
+        delegate?.userImageViewPressed(user)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TweetDetailView" {
@@ -94,4 +126,5 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
          
         }
     }
+    
 }

@@ -4,6 +4,7 @@
 //
 //  Created by Abby  Bassie on 2/28/16.
 //  Copyright © 2016 codepath. All rights reserved.
+// Help with this code provided by Chase McCoy, an excellent iOS programmer. He will not be able to provide in-depth explanation of these functions in this coordinator until Monday.
 //
 
 
@@ -34,7 +35,14 @@ import UIKit
             self.window = window
         }
 
-
+        func start() {
+            if User.currentUser != nil {
+                let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController") as! UINavigationController
+                let tweetsViewController = vc.topViewController as! TweetsViewController
+                tweetsViewController.delegate = self
+                window?.rootViewController = vc
+            }
+        }
         
         // MARK: - TweetDelegate
         

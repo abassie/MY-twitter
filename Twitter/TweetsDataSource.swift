@@ -4,9 +4,10 @@
 //
 //  Created by Abby  Bassie on 2/28/16.
 //  Copyright © 2016 codepath. All rights reserved.
-//
+//  Setup for this file by Chase McCoy, MSU codepath student
 
 import UIKit
+
 
 protocol TweetDataSource {
     func updateTweet(tweet: Tweet, forIndexPath indexPath: NSIndexPath)

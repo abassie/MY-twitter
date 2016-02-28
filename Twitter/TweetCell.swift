@@ -4,7 +4,7 @@
 //
 //  Created by Abby  Bassie on 2/20/16.
 //  Copyright © 2016 codepath. All rights reserved.
-// HUGE thanks to Chase McCoy for helping me get this project working!
+// HUGE thanks to Chase McCoy for helping me get this portion of the project working!
 
 import UIKit
 
@@ -41,7 +41,6 @@ class TweetCell: UITableViewCell {
             userLabel.text = tweet.user.name
             tweetLabel.text = tweet?.text
             thumbImageView.setImageWithURL((tweet?.user.profileImageURL)!)
-            setBtnStates()
             dateLabel.text = dateFormatter.stringFromDate((tweet?.createdAt)!)
             
             rtCountLabel.text = "\((tweet.retweetCount)!)"
@@ -104,27 +103,18 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        
         
         rtBtn.setBackgroundImage(UIImage(named: "rt_on"), forState: .Disabled)
         likeBtn.setBackgroundImage(UIImage(named: "like_on"), forState: .Disabled)
+    }
+    
+    func tappedUserImageView() {
         
-        let btnTapped = UITapGestureRecognizer(target: self, action: "tappedUserImageView")
-        btnTapped.numberOfTapsRequired = 1
-        thumbImageView.addGestureRecognizer(btnTapped)
-        
-
-        // Configure the view for the selected state
     }
     
     override func prepareForReuse() {
         thumbImageView.image = nil
         setBtnStates()
-        
     }
-    
 }
