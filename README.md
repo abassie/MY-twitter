@@ -61,15 +61,15 @@ I am thankful to have a supportive community to help beginners like me.
     See the License for the specific language governing permissions and
     limitations under the License.
     
-    # Project 5 - *Name of App Here*
+    # Project 5 - *Twitter Extended*
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
+- [x] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 - [ ] Profile page:
    - [ ] Contains the user header view
    - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
@@ -96,8 +96,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. How to make this app
+2. How to make the user profile page, make the fav & rt buttons actually reflect actions from an API call
 
 ## Video Walkthrough 
 
@@ -109,7 +109,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I am in over my head with this app. I keep having to revert back to old versions of my app because the errors are piling up so quickly. We were given instructional videos for the first four weeks and then had to create an app with more functionality than any of the previous apps. I am a hard worker, and I know how to be resourceful, but when our own school's leaders are struggling with the app, it is quite difficult to find support. I would really love to learn how to program in iOS, but as a beginner, I need more basic assignments to  teach me the fundamentals of the language.
 
 ## License
 
