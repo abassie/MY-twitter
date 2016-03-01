@@ -8,10 +8,15 @@
 
 import UIKit
 
-class NewTweetViewController: UIViewController {
+class NewTweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tweetTextView: UITextView!
     
+    @IBAction func sendBtn(sender: AnyObject) {
+        print("hey")
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
     
     var inReplyToUser: User?
     var delegate: TweetDelegate?
@@ -19,15 +24,15 @@ class NewTweetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        if let user = inReplyToUser {
-            tweetTextView.text = "@\(user.name) "
-        }
         
-        tweetTextView.becomeFirstResponder()
-    
+        self.tweetTextView.delegate = self
     }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        tweetTextView.text = ""
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

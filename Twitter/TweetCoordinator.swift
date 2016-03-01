@@ -93,7 +93,7 @@ import UIKit
         }
         
         func tweetWasRetweeted(tweetID: String, completion: (tweet: Tweet) -> ()) {
-            TwitterClient.sharedInstance.retweetTweetWithID(tweetID) { (tweet, error) -> () in
+            TwitterClient.sharedInstance.retweetTweetGivenID(tweetID) { (tweet, error) -> () in
                 if let tweet = tweet {
                     completion(tweet: tweet)
                 }

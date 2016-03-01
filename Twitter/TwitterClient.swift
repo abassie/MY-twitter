@@ -117,7 +117,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     //Functions from Chase McCoy
-    func retweetTweetWithID(id: String, completion: (tweet: Tweet?, error: NSError?) -> ()) {
+    func retweetTweetGivenID(id: String, completion: (tweet: Tweet?, error: NSError?) -> ()) {
         POST("1.1/statuses/retweet/\(id).json",
             parameters: nil,
             constructingBodyWithBlock: nil,
@@ -133,7 +133,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     //may need to add these to rtbtnpressed and likebtnpressed
     func tweetWasRetweeted(tweetID: String, completion: (tweet: Tweet) -> ()) {
-        TwitterClient.sharedInstance.retweetTweetWithID(tweetID) { (tweet, error) -> () in
+        TwitterClient.sharedInstance.retweetTweetGivenID(tweetID) { (tweet, error) -> () in
             if let tweet = tweet {
                 completion(tweet: tweet)
             }

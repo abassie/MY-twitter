@@ -8,7 +8,26 @@
 
 import UIKit
 
+
+
 class UserDetailViewController: UIViewController {
+
+    
+    @IBOutlet weak var thumbImageView: UIImageView!
+    
+    @IBOutlet weak var followersCount: UILabel!
+    
+    @IBOutlet weak var followingCount: UILabel!
+    
+    
+    @IBOutlet weak var tweetsCount: UILabel!
+    
+    var tweet: Tweet!
+    
+    var indexPath: NSIndexPath!
+    
+    var delegate: TweetDelegate?
+    var dataSource: TweetDataSource?
 
     var user: User! {
         didSet {
@@ -19,6 +38,7 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        thumbImageView.setImageWithURL((tweet?.user.profileImageURL)!)
         // Do any additional setup after loading the view.
     }
 

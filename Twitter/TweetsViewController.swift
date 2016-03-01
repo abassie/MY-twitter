@@ -68,7 +68,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func getTweetForTappedObject(sender: AnyObject) -> Tweet? {
-        return tweetsDataSource.tweetForIndex(getIndexPathForTappedObject(sender)!)
+        let indexPath = getIndexPathForTappedObject(sender)!
+        return tweets![indexPath.row]
     }
     
     //not opening user profile page
@@ -123,7 +124,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
              //use this subclass of UIViewcontroller so we can access tweet properties
             let destinationViewController = segue.destinationViewController as! TweetDetailViewController
             destinationViewController.tweet = tweet
+        
          
+        }
+        
+        if segue.identifier == "UserImageView"
+        {
+            let button = sender as! UIButton
+            let cell = button.superview?.superview as! TweetCell
+            let tweet = cell.tweet
+            let destinationViewController = segue.destinationViewController as! UserDetailViewController
+            destinationViewController.tweet = tweet
         }
     }
     

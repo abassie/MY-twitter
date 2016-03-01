@@ -34,6 +34,7 @@ class TweetDetailViewController: UIViewController {
     }
     
     @IBAction func rtBtnPressed(sender: AnyObject) {
+        
         self.tweet.retweeted = true
         self.tweet.retweetCount! += 1
         self.rtCountLabel.text = "\((self.tweet.retweetCount)!)"
