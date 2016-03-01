@@ -39,6 +39,9 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
 
         thumbImageView.setImageWithURL((tweet?.user.profileImageURL)!)
+        followersCount.text = "\((tweet?.user.followersCount)!)"
+        followingCount.text = "\((tweet?.user.followingCount)!)"
+        tweetsCount.text = "\((tweet?.user.tweetCount)!)"
         // Do any additional setup after loading the view.
     }
 
