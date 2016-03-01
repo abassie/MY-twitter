@@ -63,18 +63,18 @@ I am thankful to have a supportive community to help beginners like me.
     
     # Project 5 - *Twitter Extended*
 
-Time spent: **10** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
 - [x] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
-- [ ] Profile page:
-   - [ ] Contains the user header view
-   - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
-- [ ] Home Timeline: Tapping on a user image should bring up that user's profile page
-- [ ] Compose Page: User can compose a new tweet by tapping on a compose button.
+- [x] Profile page:
+   - [x] Contains the user header view
+   - [x] Contains a section with the users basic stats: # tweets, # following, # followers
+- [x] Home Timeline: Tapping on a user image should bring up that user's profile page
+- [x] Compose Page: User can compose a new tweet by tapping on a compose button.
 
 The following **optional** features are implemented:
 
@@ -93,25 +93,24 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
+- [x] Once compose tweet is completed, pop back to home timeline
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. How to make this app
-2. How to make the user profile page, make the fav & rt buttons actually reflect actions from an API call
+1. How to better connect the app to the API
+2. animations
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/eVesNcM.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I am in over my head with this app. I keep having to revert back to old versions of my app because the errors are piling up so quickly. We were given instructional videos for the first four weeks and then had to create an app with more functionality than any of the previous apps. I am a hard worker, and I know how to be resourceful, but when our own school's leaders are struggling with the app, it is quite difficult to find support. Chase McCoy has pretty much been our only source for help, and I do not want to have to rely so heavily on his code because I do not understand it myself.
-
-I would really love to learn how to program in iOS, but as a beginner, I need more basic assignments to  teach me the fundamentals of the language.
+My university's CodePath team helped get me through this assignment. We are a good support system for one another and are learning this language together. Once I understood some basic concepts I needed, I had a much easier time implementing the app.
 
 ## License
 
