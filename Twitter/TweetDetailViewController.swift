@@ -26,6 +26,9 @@ class TweetDetailViewController: UIViewController {
 
     @IBOutlet weak var rtCountLabel: UILabel!
     
+    @IBOutlet weak var bannerLabel: UIImageView!
+    
+    
     @IBAction func likeBtnPressed(sender: AnyObject) {
         self.tweet.liked = true
         self.tweet.favoritesCount! += 1
@@ -70,6 +73,7 @@ class TweetDetailViewController: UIViewController {
         rtCountLabel.text = "\((tweet.retweetCount)!)"
         likeLabel.text = "\((tweet.favoritesCount)!)"
             dateLabel.text = dateFormatter.stringFromDate((tweet?.createdAt)!)
+        bannerLabel.setImageWithURL((tweet?.user.bannerImageURL)!)
         
         setBtnStates()
 

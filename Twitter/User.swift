@@ -26,6 +26,7 @@ class User: NSObject {
     var tweetCount: Int?
     var followersCount: Int?
     var followingCount: Int?
+    var bannerImageURL: NSURL?
     
 
     
@@ -42,7 +43,11 @@ class User: NSObject {
         
         if let profileString = profileString{
             profileImageURL = NSURL(string: profileString)
+        } ;if let bannerURLString = dictionary["profile_banner_url"] as? String {
+            bannerImageURL = NSURL(string: bannerURLString)
         }
+        
+        
         tagline = dictionary["description"] as? String
         tweetCount = dictionary["statuses_count"] as? Int
         followingCount = dictionary["friends_count"] as? Int
