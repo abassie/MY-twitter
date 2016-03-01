@@ -12,8 +12,12 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
+    @IBOutlet weak var bannerLabel: UIImageView!
     
     @IBOutlet weak var thumbImageView: UIImageView!
+    
+    @IBOutlet weak var userLabel: UILabel!
+    
     
     @IBOutlet weak var followersCount: UILabel!
     
@@ -42,6 +46,8 @@ class UserDetailViewController: UIViewController {
         followersCount.text = "\((tweet?.user.followersCount)!)"
         followingCount.text = "\((tweet?.user.followingCount)!)"
         tweetsCount.text = "\((tweet?.user.tweetCount)!)"
+        userLabel.text = tweet.user.name
+        bannerLabel.setImageWithURL((tweet?.user.bannerImageURL)!)
         // Do any additional setup after loading the view.
     }
 
