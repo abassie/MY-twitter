@@ -61,7 +61,7 @@ I am thankful to have a supportive community to help beginners like me.
     See the License for the specific language governing permissions and
     limitations under the License.
     
-    # Project 5 - *Twitter Extended*
+# Project 5 - *Twitter Extended*
 
 Time spent: **15** hours spent in total
 
